@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TOHA HÔTEL — Hôtel, Restaurant & Services</title>
+    <title>TOHA HÔTEL — Bujumbura, Burundi</title>
 
     <meta name="description"
-          content="Bienvenue à TOHA HÔTEL. Découvrez nos chambres, notre restaurant, nos services et nos espaces de détente.">
+          content="TOHA HÔTEL — Rohero, 20e Avenue, Bujumbura, Burundi. 78 chambres, 2 chambres présidentielles, restaurant, café et parking.">
 
     <style>
         * {
@@ -22,9 +22,9 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            color: #222;
-            background: #f8f8f8;
             line-height: 1.6;
+            color: #1f2937;
+            background: #f8f7f3;
         }
 
         header {
@@ -32,14 +32,13 @@
             top: 0;
             z-index: 1000;
             background: #111827;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 15px rgba(0,0,0,.25);
         }
 
         .nav {
             max-width: 1200px;
             margin: auto;
-            padding: 16px 20px;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -47,9 +46,11 @@
         }
 
         .logo {
+            color: white;
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 800;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .logo span {
@@ -59,13 +60,15 @@
         nav {
             display: flex;
             flex-wrap: wrap;
-            gap: 18px;
+            justify-content: center;
+            gap: 16px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-size: 14px;
+            transition: .25s;
         }
 
         nav a:hover {
@@ -73,55 +76,63 @@
         }
 
         .hero {
-            min-height: 75vh;
+            min-height: 82vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 60px 20px;
-            background:
-                linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
-                url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=80")
-                center/cover no-repeat;
+            padding: 80px 20px;
             color: white;
+
+            background:
+                linear-gradient(rgba(0,0,0,.60), rgba(0,0,0,.60)),
+                url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=85")
+                center/cover no-repeat;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
         .hero h1 {
-            font-size: clamp(42px, 8vw, 78px);
-            margin-bottom: 15px;
-            letter-spacing: 3px;
+            font-size: clamp(45px, 9vw, 85px);
+            letter-spacing: 4px;
+            margin-bottom: 12px;
         }
 
         .hero h1 span {
             color: #d4af37;
         }
 
-        .hero p {
-            font-size: clamp(18px, 3vw, 25px);
+        .hero-subtitle {
+            font-size: clamp(19px, 3vw, 28px);
+            margin-bottom: 12px;
+        }
+
+        .hero-location {
+            font-size: 17px;
             margin-bottom: 30px;
+            color: #eee;
         }
 
         .btn {
             display: inline-block;
-            padding: 13px 25px;
+            padding: 14px 25px;
             margin: 5px;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 700;
+            transition: .25s;
         }
 
-        .btn-primary {
+        .btn-gold {
             background: #d4af37;
             color: #111;
         }
 
-        .btn-primary:hover {
+        .btn-gold:hover {
             background: #f0cf63;
+            transform: translateY(-2px);
         }
 
         .btn-dark {
@@ -130,11 +141,11 @@
         }
 
         .btn-dark:hover {
-            background: #273449;
+            background: #253047;
         }
 
         section {
-            padding: 70px 20px;
+            padding: 75px 20px;
         }
 
         .container {
@@ -148,39 +159,70 @@
         }
 
         .section-title h2 {
-            font-size: 35px;
+            font-size: 38px;
             margin-bottom: 10px;
+            color: #111827;
         }
 
         .section-title p {
-            color: #666;
+            color: #6b7280;
         }
 
-        .about {
+        .intro {
             background: white;
         }
 
-        .about-grid {
+        .intro-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 45px;
             align-items: center;
         }
 
-        .about-image img {
+        .intro-image img {
             width: 100%;
-            border-radius: 10px;
             display: block;
+            border-radius: 12px;
         }
 
-        .about-text h3 {
-            font-size: 28px;
+        .intro-text h3 {
+            font-size: 30px;
             margin-bottom: 15px;
+            color: #111827;
         }
 
-        .about-text p {
-            margin-bottom: 15px;
+        .intro-text p {
             color: #555;
+            margin-bottom: 15px;
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .fact {
+            background: #111827;
+            color: white;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .fact strong {
+            display: block;
+            font-size: 30px;
+            color: #d4af37;
+        }
+
+        .fact span {
+            font-size: 14px;
+        }
+
+        .rooms {
+            background: #f8f7f3;
         }
 
         .cards {
@@ -191,36 +233,55 @@
 
         .card {
             background: white;
-            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
+            border-radius: 12px;
+            box-shadow: 0 6px 25px rgba(0,0,0,.08);
         }
 
         .card img {
             width: 100%;
-            height: 220px;
+            height: 230px;
             object-fit: cover;
+            display: block;
         }
 
         .card-content {
-            padding: 22px;
+            padding: 23px;
         }
 
         .card-content h3 {
-            margin-bottom: 10px;
+            margin-bottom: 9px;
+            color: #111827;
         }
 
         .card-content p {
             color: #666;
         }
 
+        .presidential {
+            margin-top: 30px;
+            background: #111827;
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .presidential h3 {
+            color: #d4af37;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .presidential p {
+            color: #ddd;
+        }
+
         .services {
             background: #111827;
+            color: white;
+        }
+
+        .services .section-title h2 {
             color: white;
         }
 
@@ -235,15 +296,15 @@
         }
 
         .service {
-            text-align: center;
             padding: 30px 20px;
+            text-align: center;
             border: 1px solid #374151;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
         .service-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 12px;
         }
 
         .service h3 {
@@ -255,8 +316,35 @@
             font-size: 14px;
         }
 
-        .gallery {
+        .restaurant {
             background: white;
+        }
+
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .restaurant img {
+            width: 100%;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .restaurant-text h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .restaurant-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .gallery {
+            background: #f8f7f3;
         }
 
         .gallery-grid {
@@ -269,49 +357,70 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 9px;
         }
 
         .contact {
-            background: #f1f1f1;
+            background: white;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
         }
 
         .contact-box {
-            background: white;
             padding: 30px;
-            border-radius: 10px;
+            background: #f8f7f3;
+            border-radius: 12px;
         }
 
         .contact-box h3 {
             margin-bottom: 15px;
+            font-size: 25px;
         }
 
         .contact-box p {
-            margin-bottom: 10px;
+            margin-bottom: 11px;
             color: #555;
+        }
+
+        .contact-link {
+            color: #111827;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            color: #b08b19;
         }
 
         footer {
             background: #0b1120;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
+        }
+
+        footer .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer .footer-logo span {
+            color: #d4af37;
         }
 
         footer p {
-            color: #bbb;
+            color: #aaa;
             margin: 5px 0;
         }
 
-        @media (max-width: 900px) {
-            .about-grid,
-            .contact-grid {
+        @media (max-width: 950px) {
+            .intro-grid,
+            .restaurant-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -326,6 +435,10 @@
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .facts {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 600px) {
@@ -334,21 +447,35 @@
             }
 
             nav {
-                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 13px;
             }
 
             .cards,
             .service-grid,
-            .gallery-grid {
+            .gallery-grid,
+            .facts,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                min-height: 70vh;
+            section {
+                padding: 55px 15px;
             }
 
-            section {
-                padding: 50px 15px;
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                letter-spacing: 2px;
+            }
+
+            .presidential {
+                padding: 25px;
             }
         }
     </style>
@@ -365,7 +492,7 @@
 
         <nav>
             <a href="#accueil">Accueil</a>
-            <a href="#hotel">Hôtel</a>
+            <a href="#hotel">L'hôtel</a>
             <a href="#chambres">Chambres</a>
             <a href="#restaurant">Restaurant</a>
             <a href="#services">Services</a>
@@ -385,17 +512,20 @@
 
         <h1>TOHA <span>HÔTEL</span></h1>
 
-        <p>
-            Votre confort, notre priorité.
-            Une expérience hôtelière pensée pour vous.
+        <p class="hero-subtitle">
+            Votre confort, notre priorité
         </p>
 
-        <a href="#chambres" class="btn btn-primary">
+        <p class="hero-location">
+            📍 Rohero, 20ᵉ Avenue — Bujumbura, Burundi
+        </p>
+
+        <a href="#chambres" class="btn btn-gold">
             Découvrir nos chambres
         </a>
 
-        <a href="#contact" class="btn btn-dark">
-            Nous contacter
+        <a href="tel:+25769836907" class="btn btn-dark">
+            📞 Nous appeler
         </a>
 
     </div>
@@ -403,47 +533,79 @@
 </section>
 
 
-<!-- HÔTEL -->
+<!-- PRÉSENTATION -->
 
-<section class="about" id="hotel">
+<section class="intro" id="hotel">
 
     <div class="container">
 
         <div class="section-title">
+
             <h2>Bienvenue à TOHA HÔTEL</h2>
-            <p>Un espace conçu pour votre confort et votre tranquillité.</p>
+
+            <p>
+                Un établissement moderne au cœur de Bujumbura.
+            </p>
+
         </div>
 
-        <div class="about-grid">
+        <div class="intro-grid">
 
-            <div class="about-image">
+            <div class="intro-image">
 
                 <img
-                    src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=80"
-                    alt="Hôtel TOHA">
+                    src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=85"
+                    alt="TOHA HÔTEL">
 
             </div>
 
-            <div class="about-text">
+            <div class="intro-text">
 
-                <h3>Une expérience unique</h3>
+                <h3>Un séjour pensé pour votre confort</h3>
 
                 <p>
-                    TOHA HÔTEL vous accueille dans un environnement
-                    confortable, moderne et chaleureux.
+                    TOHA HÔTEL vous accueille à Bujumbura,
+                    dans le quartier de Rohero, sur la 20ᵉ Avenue.
                 </p>
 
                 <p>
-                    Notre établissement propose des chambres,
-                    un restaurant, un espace café, un parking,
-                    des services dédiés et des espaces de détente.
+                    Notre établissement propose un environnement
+                    confortable et adapté aussi bien aux séjours
+                    professionnels qu'aux séjours privés.
                 </p>
 
                 <p>
-                    Notre objectif est de proposer à chaque client
-                    un séjour agréable, sécurisé et mémorable.
+                    Avec ses chambres, ses chambres présidentielles,
+                    son restaurant, son café et son parking,
+                    TOHA HÔTEL ambitionne d'offrir une expérience
+                    complète à ses clients.
                 </p>
 
+            </div>
+
+        </div>
+
+
+        <div class="facts">
+
+            <div class="fact">
+                <strong>78</strong>
+                <span>Chambres</span>
+            </div>
+
+            <div class="fact">
+                <strong>2</strong>
+                <span>Chambres présidentielles</span>
+            </div>
+
+            <div class="fact">
+                <strong>12</strong>
+                <span>Étages</span>
+            </div>
+
+            <div class="fact">
+                <strong>80</strong>
+                <span>Unités d'hébergement</span>
             </div>
 
         </div>
@@ -455,13 +617,18 @@
 
 <!-- CHAMBRES -->
 
-<section id="chambres">
+<section class="rooms" id="chambres">
 
     <div class="container">
 
         <div class="section-title">
-            <h2>Nos chambres</h2>
-            <p>Des espaces adaptés à différents besoins.</p>
+
+            <h2>Chambres & Suites</h2>
+
+            <p>
+                Des espaces conçus pour répondre à vos besoins.
+            </p>
+
         </div>
 
         <div class="cards">
@@ -469,16 +636,16 @@
             <div class="card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=80"
-                    alt="Chambre standard">
+                    src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85"
+                    alt="Chambre confortable">
 
                 <div class="card-content">
 
-                    <h3>Chambre Standard</h3>
+                    <h3>Chambres</h3>
 
                     <p>
-                        Un espace confortable pour un séjour agréable
-                        et reposant.
+                        Un cadre confortable et reposant pour
+                        profiter pleinement de votre séjour.
                     </p>
 
                 </div>
@@ -489,16 +656,16 @@
             <div class="card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80"
+                    src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85"
                     alt="Chambre supérieure">
 
                 <div class="card-content">
 
-                    <h3>Chambre Supérieure</h3>
+                    <h3>Chambres Supérieures</h3>
 
                     <p>
-                        Plus d'espace et davantage de confort
-                        pour votre séjour.
+                        Davantage d'espace et de confort pour
+                        vos séjours professionnels ou privés.
                     </p>
 
                 </div>
@@ -509,21 +676,35 @@
             <div class="card">
 
                 <img
-                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80"
+                    src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=85"
                     alt="Suite">
 
                 <div class="card-content">
 
-                    <h3>Suite</h3>
+                    <h3>Suites</h3>
 
                     <p>
-                        Un espace élégant destiné aux séjours
-                        privilégiés.
+                        Des espaces élégants destinés aux clients
+                        recherchant davantage de confort.
                     </p>
 
                 </div>
 
             </div>
+
+        </div>
+
+
+        <div class="presidential">
+
+            <h3>👑 Chambres présidentielles</h3>
+
+            <p>
+                TOHA HÔTEL dispose également de
+                <strong>2 chambres présidentielles</strong>,
+                conçues pour offrir une expérience privilégiée
+                et un niveau de confort supérieur.
+            </p>
 
         </div>
 
@@ -532,9 +713,9 @@
 </section>
 
 
-<!-- RESTAURANT -->
+<!-- RESTAURANT & CAFÉ -->
 
-<section class="about" id="restaurant">
+<section class="restaurant" id="restaurant">
 
     <div class="container">
 
@@ -543,37 +724,37 @@
             <h2>Restaurant & Café</h2>
 
             <p>
-                Découvrez notre espace de restauration.
+                Un espace pour vos repas, rencontres et moments de détente.
             </p>
 
         </div>
 
-        <div class="about-grid">
+        <div class="restaurant-grid">
 
-            <div class="about-text">
+            <div class="restaurant-text">
 
-                <h3>Une expérience gastronomique</h3>
+                <h3>Restaurant & Café TOHA</h3>
 
                 <p>
-                    TOHA HÔTEL dispose d'un espace restaurant
-                    et café destiné aux clients et visiteurs.
+                    Profitez de notre espace de restauration
+                    dans un cadre agréable.
                 </p>
 
                 <p>
-                    Profitez d'un cadre agréable pour vos repas,
-                    rencontres et moments de détente.
+                    Le restaurant et le café sont intégrés
+                    à l'offre de services de TOHA HÔTEL.
                 </p>
 
-                <a href="#contact" class="btn btn-primary">
+                <a href="#contact" class="btn btn-gold">
                     Nous contacter
                 </a>
 
             </div>
 
-            <div class="about-image">
+            <div>
 
                 <img
-                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85"
                     alt="Restaurant">
 
             </div>
@@ -596,7 +777,7 @@
             <h2>Nos services</h2>
 
             <p>
-                Tout ce qu'il faut pour rendre votre séjour agréable.
+                Les services essentiels pour votre séjour.
             </p>
 
         </div>
@@ -610,7 +791,7 @@
                 <h3>Hébergement</h3>
 
                 <p>
-                    Des chambres adaptées à vos besoins.
+                    78 chambres et 2 chambres présidentielles.
                 </p>
 
             </div>
@@ -623,7 +804,20 @@
                 <h3>Restaurant</h3>
 
                 <p>
-                    Un espace restaurant et café.
+                    Un espace de restauration pour nos clients.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-icon">☕</div>
+
+                <h3>Café</h3>
+
+                <p>
+                    Un espace café pour vos moments de détente.
                 </p>
 
             </div>
@@ -636,20 +830,7 @@
                 <h3>Parking</h3>
 
                 <p>
-                    Un espace de stationnement pour nos clients.
-                </p>
-
-            </div>
-
-
-            <div class="service">
-
-                <div class="service-icon">🔐</div>
-
-                <h3>Sécurité</h3>
-
-                <p>
-                    Un environnement pensé pour votre tranquillité.
+                    Un espace de stationnement pour les clients.
                 </p>
 
             </div>
@@ -680,20 +861,20 @@
         <div class="gallery-grid">
 
             <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"
                 alt="Hôtel">
 
             <img
-                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=900&q=85"
                 alt="Chambre">
 
             <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80"
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85"
                 alt="Restaurant">
 
             <img
-                src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80"
-                alt="Intérieur hôtel">
+                src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=85"
+                alt="Intérieur">
 
         </div>
 
@@ -710,10 +891,10 @@
 
         <div class="section-title">
 
-            <h2>Contact</h2>
+            <h2>Contactez-nous</h2>
 
             <p>
-                Nous sommes à votre disposition.
+                TOHA HÔTEL — Bujumbura, Burundi.
             </p>
 
         </div>
@@ -722,32 +903,43 @@
 
             <div class="contact-box">
 
-                <h3>TOHA HÔTEL</h3>
+                <h3>📍 Notre adresse</h3>
 
-                <p>📍 Adresse : À compléter</p>
+                <p>
+                    <strong>TOHA HÔTEL</strong>
+                </p>
 
-                <p>📞 Téléphone : À compléter</p>
+                <p>
+                    Rohero, 20ᵉ Avenue
+                </p>
 
-                <p>✉️ Email : À compléter</p>
-
-                <p>🌐 Site officiel : TOHA HÔTEL</p>
+                <p>
+                    Bujumbura, Burundi
+                </p>
 
             </div>
 
 
             <div class="contact-box">
 
-                <h3>Réservation</h3>
+                <h3>📞 Téléphone & WhatsApp</h3>
 
                 <p>
-                    Pour une réservation ou une demande
-                    d'information, contactez directement
-                    notre établissement.
+                    <a class="contact-link"
+                       href="tel:+25769836907">
+                        +257 69 83 69 07
+                    </a>
                 </p>
 
-                <a href="mailto:contact@toha-hotel.com"
-                   class="btn btn-primary">
-                    Envoyer un email
+                <p>
+                    Disponible également sur WhatsApp.
+                </p>
+
+                <a
+                    href="https://wa.me/25769836907"
+                    class="btn btn-gold"
+                    target="_blank">
+                    💬 WhatsApp
                 </a>
 
             </div>
@@ -763,15 +955,23 @@
 
 <footer>
 
+    <div class="footer-logo">
+        TOHA <span>HÔTEL</span>
+    </div>
+
     <p>
-        © 2026 TOHA HÔTEL — Tous droits réservés.
+        Rohero, 20ᵉ Avenue — Bujumbura, Burundi
     </p>
 
     <p>
-        Hôtel • Restaurant • Café • Parking • Services
+        Téléphone / WhatsApp : +257 69 83 69 07
+    </p>
+
+    <p>
+        © 2026 TOHA HÔTEL — Tous droits réservés.
     </p>
 
 </footer>
 
 </body>
-  </html>
+</html>
